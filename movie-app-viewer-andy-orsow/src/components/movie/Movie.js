@@ -19,7 +19,7 @@ export default ({ thumbNail, background, title, year, abstract}) => (
       <h5 className="Movie-title">{title}</h5>
       <p className="Movie-year">{year}</p>
       <button className="Movie-button"> Play Movie </button>
-      <p className="Movie-abstract"> { abstract }</p>
+  <p className="Movie-abstract"> { abstract }</p>
     </div>
   </div>
 

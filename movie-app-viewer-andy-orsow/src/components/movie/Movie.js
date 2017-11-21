@@ -1,15 +1,26 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
-// import './Movie.css';
+import X from '../../statics/menu-close-x.png';
+import './Movie.css';
 
-export default ({ thumbNail, background, title, year, text}) => (
+export default ({ thumbNail, background, title, year, abstract}) => (
   <div className="Movie">
-    <h1>Hello Movie</h1>
-    <div>{ thumbNail }</div>
-    <div>{ background }</div>
-    <div>{ title }</div>
-    <div>{ year }</div>
-    <div>{ text }</div>
+    <Link to="/movies"  className="Movie-CloseButton-container" >
+      <img src={X} className="Movie-CloseButton" />
+    </Link>
+    <div className="Movie-BackgroundImage-Container">
+      <img className="Movie-BackgroundImage" src={background} />
+    </div>
+    <div className="Movie-Thumbnail-Container">
+      <img src={thumbNail} className="Movie-Thumbnail-Image" />
+    </div>
+
+    <div className="Movie-About-container">
+      <h5 className="Movie-title">{title}</h5>
+      <p className="Movie-year">{year}</p>
+      <button className="Movie-button"> Play Movie </button>
+      <p className="Movie-abstract"> { abstract }</p>
+    </div>
   </div>
 
 

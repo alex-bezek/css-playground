@@ -1,0 +1,87 @@
+.Movie {
+  overflow-y: scroll;
+  height: 100%;
+}
+
+.Movie-CloseButton-container {
+  position: absolute;
+  left: 320px;
+  z-index: 10;
+}
+
+.Movie-CloseButton {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  /* /* float: right; */
+  margin: 10px;
+}
+
+.Movie-BackgroundImage-Container {
+  width: 100%;
+  height: 275px;
+}
+
+.Movie-BackgroundImage-Container::after {
+  display: block;
+  position: relative;
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0, #fff 100%);
+  margin-top: -300px;
+  height: 300px;
+  width: 100%;
+  content: '';
+}
+
+.Movie-BackgroundImage{
+  width: 100%;
+  background-size: cover;
+}
+
+.Movie-Thumbnail-Container {
+  width: 100%;
+  text-align: center;
+  position: relative;
+  bottom: 120px;
+}
+
+.Movie-Thumbnail-Image {
+  width: 35%;
+
+  /* box-shadow: 0 8px 20px -6px rgba(0, 0, 0, 0.8); */
+  box-shadow: 10px 10px 71px 3px rgba(0,0,0,0.75);
+}
+
+.Movie-About-container {
+  width: 80%;
+  margin: auto;
+  margin-top: -155px;
+  text-align: center;
+
+}
+
+.Movie-title {
+  font-size: 36px;
+  margin-bottom: 0px;
+}
+
+.Movie-year {
+  margin: 0;
+}
+
+.Movie-button {
+  background-color: black;
+  color: white;
+  border-radius: 20px;
+  height: 45px;
+  line-height: 30px;
+  font-size: 16px;
+  padding-left: 25px;
+  padding-right: 25px;
+  margin-top: 20px;
+}
+
+.Movie-abstract {
+  text-align: left;
+  font-size: 15px;
+  line-height: 19px;
+}

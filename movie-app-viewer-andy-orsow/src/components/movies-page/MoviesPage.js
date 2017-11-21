@@ -2,16 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 import './MoviesPage.css';
 import X from '../../statics/menu-close-x.png';
-import arrival from '../../statics/arrival.jpg';
-import avengers from '../../statics/avengers.jpg';
-import darknight from '../../statics/darknight.jpg';
-import divergent from '../../statics/divergent.jpeg';
-import guardians from '../../statics/guardians.jpg';
-import mockingjay from '../../statics/mockingjay.jpg';
-import oblivian from '../../statics/oblivian.jpg';
-import pirates from '../../statics/pirates.jpg';
-import thor from '../../statics/thor.jpeg';
-import sherlock from '../../statics/sherlock.jpg';
+
+import Movies from '../../MovieData';
+
+const netflix = Movies.slice(Movies.length / 2);
+const amazon = Movies.slice(0, Movies.length - netflix.length);
 
 export default () => (
   <div className="Movies">
@@ -20,7 +15,7 @@ export default () => (
         Movies
       </h1>
       <Link to="/">
-        <img src={X} className="Movies-ProfilePic" />
+        <img src={X} className="Movies-CloseButton" />
       </Link>
     </div>
     <p>46 items</p>
@@ -29,21 +24,13 @@ export default () => (
     <p>Netflix - My List</p>
     <div className="Movies-list-container">
       <div className="Movies-list-view">
-        <Link to="/movies/arrival" >
-          <img className="Movies-thumbnail" src={arrival} />
-        </Link>
-        <Link to="/movies/avengers" >
-          <img className="Movies-thumbnail" src={avengers} />
-        </Link>
-        <Link to="/movies/darknight" >
-          <img className="Movies-thumbnail" src={darknight} />
-        </Link>
-        <Link to="/movies/divergent" >
-          <img className="Movies-thumbnail" src={divergent} />
-        </Link>
-        <Link to="/movies/guardians" >
-          <img className="Movies-thumbnail" src={guardians} />
-        </Link>
+        {
+          netflix.map(movie => (
+            <Link to={`/movies/${movie.path}`} >
+              <img className="Movies-thumbnail" src={movie.thumbNail} />
+            </Link>
+          ))
+        }
       </div>
     </div>
 
@@ -54,21 +41,13 @@ export default () => (
     <p>Amazon Prime Video - Watchlist</p>
     <div className="Movies-list-container">
       <div className="Movies-list-view">
-        <Link to="/movies/mockingjay" >
-          <img className="Movies-thumbnail" src={mockingjay} />
-        </Link>
-        <Link to="/movies/oblivian" >
-          <img className="Movies-thumbnail" src={oblivian} />
-        </Link>
-        <Link to="/movies/pirates" >
-          <img className="Movies-thumbnail" src={pirates} />
-        </Link>
-        <Link to="/movies/thor" >
-          <img className="Movies-thumbnail" src={thor} />
-        </Link>
-        <Link to="/movies/sherlock" >
-          <img className="Movies-thumbnail" src={sherlock} />
-        </Link>
+        {
+          amazon.map(movie => (
+            <Link to={`/movies/${movie.path}`} >
+              <img className="Movies-thumbnail" src={movie.thumbNail} />
+            </Link>
+          ))
+        }
       </div>
     </div>
   </div>

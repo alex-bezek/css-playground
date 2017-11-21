@@ -24,7 +24,7 @@ class App extends Component {
                     background={movie.background}
                     title={movie.title}
                     year={movie.year}
-                    text={movie.text}
+                    abstract={movie.abstract}
                   />
                 }
               />

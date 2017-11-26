@@ -7,7 +7,7 @@ export default () => (
   <div className="Home">
     <div className="Home-header">
       <h1>My Things</h1>
-      <img className="Home-ProfilePic" src={ProfilePic} />
+      <img className="Home-ProfilePic" src={ProfilePic} alt="profile guy fox" />
     </div>
     <div className="Home-Categories">
       <Link className="Home-Category Home-Movies" to="/movies">

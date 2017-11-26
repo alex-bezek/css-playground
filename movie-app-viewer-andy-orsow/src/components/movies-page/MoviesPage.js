@@ -10,15 +10,16 @@ const amazon = Movies.slice(0, Movies.length - netflix.length);
 
 export default () => (
   <div className="Movies">
+    <div className="Movies-Background"/>
     <div className="Movies-header">
       <h1>
         Movies
       </h1>
       <Link to="/">
-        <img src={X} className="Movies-CloseButton" />
+        <img src={X} className="Movies-CloseButton" alt="close X button" />
       </Link>
     </div>
-    <p>46 items</p>
+    <p className="Movies-ItemsCount">46 items</p>
 
     <br />
     <p>Netflix - My List</p>
@@ -27,7 +28,7 @@ export default () => (
         {
           netflix.map(movie => (
             <Link to={`/movies/${movie.path}`} >
-              <img className="Movies-thumbnail" src={movie.thumbNail} />
+              <img className="Movies-thumbnail" src={movie.thumbNail} alt={`thumbnail of ${movie.title}`} />
             </Link>
           ))
         }
@@ -44,7 +45,7 @@ export default () => (
         {
           amazon.map(movie => (
             <Link to={`/movies/${movie.path}`} >
-              <img className="Movies-thumbnail" src={movie.thumbNail} />
+              <img className="Movies-thumbnail" src={movie.thumbNail} alt={`thumbnail of ${movie.title}`} />
             </Link>
           ))
         }
